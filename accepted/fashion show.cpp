@@ -1,0 +1,46 @@
+#include<stdio.h>
+# define max 1000
+main()
+{
+int n,i,j,a,k,temp,sum,b[max],c[max];
+scanf("%d",&n);
+while(n)
+{
+ scanf("%d",&a);
+ for(j=0;j<a;j++)
+ scanf("%d",&b[j]);
+ for(k=0;k<a;k++)
+ scanf("%d",&c[k]);
+ sum=0;
+ for(k=0;k<a-1;k++)
+ {
+  for(j=0;j<a-k-1;j++)
+  {
+  if(b[j]>b[j+1])
+  {
+  temp=b[j];
+  b[j]=b[j+1];
+  b[j+1]=temp;
+  }
+}
+}
+   for(k=0;k<a-1;k++)
+ {
+  for(j=0;j<a-k-1;j++)
+  {
+  if(c[j]>c[j+1])
+  {
+  temp=c[j];
+  c[j]=c[j+1];
+  c[j+1]=temp;
+  }
+  }
+ }
+ for(j=0;j<a;j++)
+ {
+  sum=sum+b[j]*c[j];
+  }
+  printf("%d\n",sum);
+  n--;
+}
+ }
